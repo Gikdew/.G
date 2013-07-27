@@ -61,8 +61,7 @@ public class ViewImage extends ActionBarActivity{
         filename = imageAdapter.items.get(position).name + ".PNG"; //Ads jpg to it (I have to change it to png)
         bm = BitmapFactory.decodeResource( getResources(), wallpaper);
 		path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-		file = new File(path, filename);
-        
+		file = new File(path, filename);      
                 
     }
 
@@ -123,12 +122,13 @@ public class ViewImage extends ActionBarActivity{
 	                }
 	            });
 
-	            builder.create().show();
-	             
+	            builder.create().show();	             
 	            return true;
+	            
 	        case R.id.share:
 	        	shareIntent();
 	        	return true;
+	        	
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
