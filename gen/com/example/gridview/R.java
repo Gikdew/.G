@@ -1024,14 +1024,13 @@ containing a value of this type.
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int pager=0x7f050047;
         public static final int picture=0x7f050043;
         public static final int progress_circular=0x7f050034;
         public static final int progress_horizontal=0x7f050035;
         public static final int radio=0x7f05002d;
         public static final int right_container=0x7f050032;
         public static final int right_icon=0x7f050033;
-        public static final int saveSD=0x7f050049;
+        public static final int saveSD=0x7f050048;
         public static final int search_badge=0x7f050038;
         public static final int search_bar=0x7f050037;
         public static final int search_button=0x7f050039;
@@ -1042,8 +1041,8 @@ containing a value of this type.
         public static final int search_plate=0x7f05003c;
         public static final int search_src_text=0x7f05003d;
         public static final int search_voice_btn=0x7f050041;
-        public static final int setWallpaper=0x7f050048;
-        public static final int share=0x7f05004a;
+        public static final int setWallpaper=0x7f050047;
+        public static final int share=0x7f050049;
         public static final int shortcut=0x7f05002c;
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
@@ -1114,7 +1113,6 @@ containing a value of this type.
         public static final int gridview_item=0x7f030019;
         public static final int support_simple_spinner_dropdown_item=0x7f03001a;
         public static final int view_image=0x7f03001b;
-        public static final int view_pager=0x7f03001c;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

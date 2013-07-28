@@ -6,8 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import android.app.AlertDialog;
 import android.app.WallpaperManager;
@@ -19,7 +17,6 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -48,7 +45,7 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setTitle("Image");
         
-        setContentView(R.layout.view_pager);                    
+        setContentView(R.layout.view_image);                    
         ActionBar actionBar = getSupportActionBar();        
         actionBar.setDisplayHomeAsUpEnabled(true);
         
@@ -58,22 +55,6 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
  
         // Open the Image adapter
         MyAdapter imageAdapter = new MyAdapter(this);
-        List<ImageView> images = new ArrayList<ImageView>();
-        
-        //Retrieve all the images
-        for (int j = 0; j < imageAdapter.getCount(); j++) {
-            ImageView imageView = new ImageView(this);
-            imageView.setImageResource(imageAdapter.items.get(j).drawableId);
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
-            images.add(imageView);
-        }
-        
-        // Set the images into ViewPager
-        ImagePagerAdapter pageradapter = new ImagePagerAdapter(this, images);
-        ViewPager viewpager = (ViewPager) findViewById(R.id.pager);
-        viewpager.setAdapter(pageradapter);
-        // Show images following the position
-        viewpager.setCurrentItem(position);
  
         // Displaying selected Image
         imageView = (ImageView) findViewById(R.id.full_image_view);

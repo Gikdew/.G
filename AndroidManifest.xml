@@ -31,9 +31,6 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.gridview.MainActivity" />
         </activity>
-        
-        <activity android:name=".ImageViewPager" >
-        </activity>
     </application>
 
 </manifest>
