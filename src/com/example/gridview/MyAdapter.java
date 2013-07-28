@@ -19,11 +19,21 @@ public class MyAdapter extends BaseAdapter {
         inflater = LayoutInflater.from(context);
 
         items.add(new Item("Red Flower",       R.drawable.red));
-        items.add(new Item("Magenta",   R.drawable.ic_launcher));
-        items.add(new Item("Dark Gray", R.drawable.ic_launcher));
-        items.add(new Item("Gray",      R.drawable.ic_launcher));
-        items.add(new Item("Green",     R.drawable.ic_launcher));
-        items.add(new Item("Cyan",      R.drawable.ic_launcher));
+        items.add(new Item("Magenta",   R.drawable.red));
+        items.add(new Item("Dark Gray", R.drawable.red));
+        items.add(new Item("Gray",      R.drawable.red));
+        items.add(new Item("Green",     R.drawable.red));
+        items.add(new Item("Cyan",      R.drawable.red));
+        items.add(new Item("Magenta",   R.drawable.red));
+        items.add(new Item("Dark Gray", R.drawable.red));
+        items.add(new Item("Gray",      R.drawable.red));
+        items.add(new Item("Green",     R.drawable.red));
+        items.add(new Item("Cyan",      R.drawable.red));
+        items.add(new Item("Magenta",   R.drawable.red));
+        items.add(new Item("Dark Gray", R.drawable.red));
+        items.add(new Item("Gray",      R.drawable.red));
+        items.add(new Item("Green",     R.drawable.red));
+        items.add(new Item("Cyan",      R.drawable.red));
     }
 
     @Override
