@@ -24,6 +24,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,7 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
     AlertDialog.Builder builder;
     ImageView imageView;
     TextView tView;
+    AlphaAnimation fadeIn, fadeOut;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,11 +67,21 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
         imageView.setImageResource(imageAdapter.items.get(position).drawableId);
         tView.setText(imageAdapter.items.get(position).name);
         
+        //Wallpaper and Save in SD card
         wallpaper = imageAdapter.items.get(position).drawableId; //Gets the R.drawable file
         filename = imageAdapter.items.get(position).name + ".PNG"; //Ads jpg to it (I have to change it to png)
         bm = BitmapFactory.decodeResource( getResources(), wallpaper);
 		path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES + getResources().getText(R.string.path));
 		file = new File(path, filename);      
+		
+		//FadeIn and FadeOut animation
+		fadeIn = new AlphaAnimation(0.0f , 1.0f ) ; 
+		fadeIn.setDuration(500);
+		fadeIn.setFillAfter(true);
+
+		fadeOut = new AlphaAnimation( 1.0f , 0.0f ) ; 
+		fadeOut.setDuration(500);
+		fadeOut.setFillAfter(true);
                 
     }
 
@@ -199,7 +211,7 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
 
 
 	private void setWallie() {
-    	Toast.makeText(ViewImage.this,"Loading...", Toast.LENGTH_SHORT).show();
+    	
 		InputStream iS = getResources().openRawResource(wallpaper);
 		Bitmap bitmap = BitmapFactory.decodeStream(iS);
 		WallpaperManager myWM = WallpaperManager.getInstance(getApplicationContext());
@@ -209,7 +221,7 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
 		}catch(IOException e){
 			e.printStackTrace();			
 		}finally{	    		
-			Toast.makeText(ViewImage.this, filename, Toast.LENGTH_SHORT).show();
+			Toast.makeText(ViewImage.this, "Success!", Toast.LENGTH_SHORT).show();
 		}		          
 	}
 
@@ -219,8 +231,10 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
 		switch (v.getId()) {
 		case R.id.full_image_view:
 				if(tView.getVisibility() == View.VISIBLE){
+					tView.startAnimation(fadeOut);
 					tView.setVisibility(View.INVISIBLE);;
 				}else{
+					tView.startAnimation(fadeIn);
 					tView.setVisibility(View.VISIBLE);
 				}
 			break;
