@@ -18,7 +18,7 @@ public class MyAdapter extends BaseAdapter {
     public MyAdapter(Context context) {
         inflater = LayoutInflater.from(context);
 
-        items.add(new Item("Red",       R.drawable.red));
+        items.add(new Item("Red Flower",       R.drawable.red));
         items.add(new Item("Magenta",   R.drawable.ic_launcher));
         items.add(new Item("Dark Gray", R.drawable.ic_launcher));
         items.add(new Item("Gray",      R.drawable.ic_launcher));

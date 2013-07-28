@@ -8,5 +8,6 @@
     <string name="menu_sSD">Save in Phone</string>
     <string name="menu_share">Share</string>
     <string name="package_name">com.example.gridview</string>
+    <string name="path">/Wallpapers/</string>
 
 </resources>

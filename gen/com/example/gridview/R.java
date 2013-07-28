@@ -1165,6 +1165,7 @@ containing a value of this type.
         public static final int menu_sW=0x7f0a0010;
         public static final int menu_share=0x7f0a0012;
         public static final int package_name=0x7f0a0013;
+        public static final int path=0x7f0a0014;
     }
     public static final class style {
         /** 

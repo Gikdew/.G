@@ -22,18 +22,21 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
  
-public class ViewImage extends ActionBarActivity{
+public class ViewImage extends ActionBarActivity implements OnClickListener{
     int position;
     int wallpaper;
     String filename;
     File file = null, path = null;
     Bitmap bm;
     AlertDialog.Builder builder;
-    
+    ImageView imageView;
+    TextView tView;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,8 +55,11 @@ public class ViewImage extends ActionBarActivity{
         MyAdapter imageAdapter = new MyAdapter(this);
  
         // Displaying selected Image
-        ImageView imageView = (ImageView) findViewById(R.id.full_image_view);
-        TextView tView = (TextView) findViewById(R.id.tvLayer);
+        imageView = (ImageView) findViewById(R.id.full_image_view);
+        tView = (TextView) findViewById(R.id.tvLayer);
+        
+        //SetOnClickListners
+        imageView.setOnClickListener((OnClickListener) this);
  
         // Set the image position that is passed from GridViewActivity.java
         imageView.setImageResource(imageAdapter.items.get(position).drawableId);
@@ -62,7 +68,7 @@ public class ViewImage extends ActionBarActivity{
         wallpaper = imageAdapter.items.get(position).drawableId; //Gets the R.drawable file
         filename = imageAdapter.items.get(position).name + ".PNG"; //Ads jpg to it (I have to change it to png)
         bm = BitmapFactory.decodeResource( getResources(), wallpaper);
-		path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+		path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES + getResources().getText(R.string.path));
 		file = new File(path, filename);      
                 
     }
@@ -148,8 +154,7 @@ public class ViewImage extends ActionBarActivity{
 	}
 
 
-	private void saveSD() {
-		Toast.makeText(ViewImage.this,"Saving...", Toast.LENGTH_SHORT).show();        
+	private void saveSD() {		  
 		path.mkdirs();
         try {
 
@@ -161,7 +166,9 @@ public class ViewImage extends ActionBarActivity{
             is.close();
             os.close();
 
-            Toast.makeText(ViewImage.this,"The Image has been Saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ViewImage.this,
+            		"The Image has been saved in Pictures" + getResources().getText(R.string.path),
+            		Toast.LENGTH_LONG).show();
             
             updateMediaScanner();
             //Update MediaScanner Files for user to use
@@ -204,5 +211,22 @@ public class ViewImage extends ActionBarActivity{
 		}finally{	    		
 			Toast.makeText(ViewImage.this, filename, Toast.LENGTH_SHORT).show();
 		}		          
+	}
+
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.full_image_view:
+				if(tView.getVisibility() == View.VISIBLE){
+					tView.setVisibility(View.INVISIBLE);;
+				}else{
+					tView.setVisibility(View.VISIBLE);
+				}
+			break;
+		default:
+			break;
+		}
+		
 	}
 }     
