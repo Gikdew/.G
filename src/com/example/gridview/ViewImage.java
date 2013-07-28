@@ -23,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
  
 public class ViewImage extends ActionBarActivity{
@@ -43,7 +44,6 @@ public class ViewImage extends ActionBarActivity{
         ActionBar actionBar = getSupportActionBar();        
         actionBar.setDisplayHomeAsUpEnabled(true);
         
-        
         // Get intent data from GridViewActivity.java
         Intent i = getIntent();
         position = i.getExtras().getInt("id");
@@ -53,9 +53,11 @@ public class ViewImage extends ActionBarActivity{
  
         // Displaying selected Image
         ImageView imageView = (ImageView) findViewById(R.id.full_image_view);
+        TextView tView = (TextView) findViewById(R.id.tvLayer);
  
         // Set the image position that is passed from GridViewActivity.java
         imageView.setImageResource(imageAdapter.items.get(position).drawableId);
+        tView.setText(imageAdapter.items.get(position).name);
         
         wallpaper = imageAdapter.items.get(position).drawableId; //Gets the R.drawable file
         filename = imageAdapter.items.get(position).name + ".PNG"; //Ads jpg to it (I have to change it to png)

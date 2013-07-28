@@ -1030,7 +1030,7 @@ containing a value of this type.
         public static final int radio=0x7f05002d;
         public static final int right_container=0x7f050032;
         public static final int right_icon=0x7f050033;
-        public static final int saveSD=0x7f050047;
+        public static final int saveSD=0x7f050048;
         public static final int search_badge=0x7f050038;
         public static final int search_bar=0x7f050037;
         public static final int search_button=0x7f050039;
@@ -1041,8 +1041,8 @@ containing a value of this type.
         public static final int search_plate=0x7f05003c;
         public static final int search_src_text=0x7f05003d;
         public static final int search_voice_btn=0x7f050041;
-        public static final int setWallpaper=0x7f050046;
-        public static final int share=0x7f050048;
+        public static final int setWallpaper=0x7f050047;
+        public static final int share=0x7f050049;
         public static final int shortcut=0x7f05002c;
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
@@ -1054,6 +1054,7 @@ containing a value of this type.
         public static final int title=0x7f050029;
         public static final int title_container=0x7f050030;
         public static final int top_action_bar=0x7f05001e;
+        public static final int tvLayer=0x7f050046;
         public static final int up=0x7f05001f;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
