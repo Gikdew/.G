@@ -76,15 +76,14 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
 		
 		//FadeIn and FadeOut animation
 		fadeIn = new AlphaAnimation(0.0f , 1.0f ) ; 
-		fadeIn.setDuration(500);
+		fadeIn.setDuration(400);
 		fadeIn.setFillAfter(true);
 
 		fadeOut = new AlphaAnimation( 1.0f , 0.0f ) ; 
-		fadeOut.setDuration(500);
+		fadeOut.setDuration(400);
 		fadeOut.setFillAfter(true);
                 
     }
-
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -154,7 +153,6 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
 	    }
 	}
 
-
 	private void shareIntent() {
 		Uri uriToImage = Uri.parse("android.resource://"+ getResources().getText(R.string.package_name) +"/" + wallpaper);
 		Intent shareIntent = new Intent();
@@ -164,7 +162,6 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
 		startActivity(Intent.createChooser(shareIntent,  "Share images to.."));
 		
 	}
-
 
 	private void saveSD() {		  
 		path.mkdirs();
@@ -209,7 +206,6 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
                 });		
 	}
 
-
 	private void setWallie() {
     	
 		InputStream iS = getResources().openRawResource(wallpaper);
@@ -224,7 +220,6 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
 			Toast.makeText(ViewImage.this, "Success!", Toast.LENGTH_SHORT).show();
 		}		          
 	}
-
 
 	@Override
 	public void onClick(View v) {
