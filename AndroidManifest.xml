@@ -26,7 +26,7 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
         
         <activity
-            android:name="com.gikdew.codwallpapers.MainActivity"
+            android:name="com.example.gridview.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,8 +35,8 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.gikdew.codwallpapers.ViewImage"
-            	  andrcom.gikdew.codwallpapers.MainActivityle.gridview.MainActivity">
+        <activity android:name=".ViewImage"
+            	  android:parentActivityName="com.example.gridview.MainActivity">
             <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.gridview.MainActivity" />
