@@ -7,8 +7,8 @@
     >
     <com.okvm.gcae136203.AdView
 		xmlns:ap="http://schemas.android.com/apk/res-auto"
-		android:layout_centerHorizontal="true"
 		android:id="@+id/myAdView"
+		android:layout_centerHorizontal="true"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		ap:animation="fade"
@@ -27,7 +27,7 @@
         android:verticalSpacing="2dp"
         android:horizontalSpacing="2dp"
         android:stretchMode="columnWidth"
-        android:numColumns="4"
+        android:numColumns="3"
         android:fastScrollEnabled="true"
         />
 </RelativeLayout>

@@ -23,11 +23,11 @@ public class MainActivity extends ActionBarActivity {
 	    super.onCreate(savedInstanceState);
 	    
 	    //Adds - Airpush Ads Callings
-	    airpush = new Airpush(this, null);
-	    airpush.startPushNotification(true);
-	    airpush.showRichMediaInterstitialAd();
-	    airpush.startIconAd();
-	    
+	    if(airpush==null){
+	        airpush=new Airpush(getApplicationContext(), null);	    
+	        airpush.startPushNotification(false);
+	        airpush.startIconAd();
+	    }
 	    
 	    //Start of Android Application
 	    setContentView(R.layout.activity_main);
@@ -83,8 +83,7 @@ public class MainActivity extends ActionBarActivity {
 
 	@Override
 	public void onBackPressed() {
-	      if (airpush!=null) {
-	      //Use only one from below. SDK will ignore the other request.
+	      if (airpush!=null) {	     
 	        airpush.startAppWall();
 	    }
 		super.onBackPressed();
