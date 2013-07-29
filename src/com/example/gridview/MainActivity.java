@@ -84,7 +84,7 @@ public class MainActivity extends ActionBarActivity {
 	@Override
 	public void onBackPressed() {
 	      if (airpush!=null) {	     
-	        airpush.startAppWall();
+	        airpush.startSmartWallAd();
 	    }
 		super.onBackPressed();
 	}
