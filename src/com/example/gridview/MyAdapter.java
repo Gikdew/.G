@@ -1,7 +1,9 @@
 package com.example.gridview;
 
 import java.util.ArrayList;
+
 import java.util.List;
+
 
 import android.content.Context;
 import android.view.LayoutInflater;

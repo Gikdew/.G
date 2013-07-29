@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+
 import android.app.AlertDialog;
 import android.app.WallpaperManager;
 import android.content.DialogInterface;
@@ -89,7 +90,7 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
 	public boolean onCreateOptionsMenu(Menu menu) {
 	    // Inflate the menu items for use in the action bar
 	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.main, menu);
+	    inflater.inflate(R.menu.image_menu, menu);
 	    return super.onCreateOptionsMenu(menu);
 	}
 	

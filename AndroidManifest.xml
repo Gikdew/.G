@@ -6,6 +6,12 @@
     
     <uses-permission android:name="android.permission.SET_WALLPAPER"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -16,6 +22,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+        
         <activity
             android:name="com.example.gridview.MainActivity"
             android:label="@string/app_name" >
@@ -25,12 +32,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity android:name=".ViewImage"
             	  android:parentActivityName="com.example.gridview.MainActivity">
             <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.gridview.MainActivity" />
         </activity>
-    </application>
-
+        
+        <meta-data android:name="com.okvm.gcae136203.APPID" android:value="160090" />
+		<meta-data android:name="com.okvm.gcae136203.APIKEY" android:value="android*1362184643136203884"/>
+		
+		<activity android:exported="false" android:name="com.okvm.gcae136203.SmartWallActivity"
+		     android:configChanges="orientation|screenSize"
+		android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+		
+		<activity android:name="com.okvm.gcae136203.BrowserActivity"
+		android:configChanges="orientation|screenSize" />
+    </application>	  
 </manifest>
