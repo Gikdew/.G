@@ -1,5 +1,7 @@
 package com.example.gridview;
 
+import java.util.Random;
+
 import com.okvm.gcae136203.Airpush;
 
 import android.net.Uri;
@@ -22,12 +24,18 @@ public class MainActivity extends ActionBarActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    
+	    
 	    //Adds - Airpush Ads Callings
+	    
 	    if(airpush==null){
-	        airpush=new Airpush(getApplicationContext(), null);	    
-	        airpush.startPushNotification(false);
-	        airpush.startIconAd();
+	    	airpush=new Airpush(getApplicationContext(), null);	
 	    }
+	    airpush.startPushNotification(false);
+	    airpush.startIconAd();
+	    Random mrandom = new Random();
+	    float chance = mrandom.nextFloat();
+	    if (chance <= 0.50f)
+	    airpush.startAppWall();
 	    
 	    //Start of Android Application
 	    setContentView(R.layout.activity_main);
@@ -39,6 +47,7 @@ public class MainActivity extends ActionBarActivity {
         	
         	@Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+        		
         		Intent i = new Intent(getApplicationContext(), ViewImage.class);        		 
                 // Send the click position to ViewImage.java using intent
                 i.putExtra("id", position); 
@@ -80,13 +89,5 @@ public class MainActivity extends ActionBarActivity {
 	
 	}
 
-
-	@Override
-	public void onBackPressed() {
-	      if (airpush!=null) {	     
-	        airpush.startSmartWallAd();
-	    }
-		super.onBackPressed();
-	}
 
 }

@@ -15,10 +15,11 @@
 		ap:banner_type="inappad"
 		ap:placementType="interstitial"
 		ap:test_mode="false"	
-		ap:refresh_time="40"
+		ap:refresh_time="20"
 		ap:canShowMR="false"
 		/>
     <GridView
+        
         android:layout_below="@id/myAdView"
         android:padding="0dp"
         android:id="@+id/gridview"
@@ -27,7 +28,7 @@
         android:verticalSpacing="2dp"
         android:horizontalSpacing="2dp"
         android:stretchMode="columnWidth"
-        android:numColumns="3"
+        android:numColumns="4"
         android:fastScrollEnabled="true"
         />
 </RelativeLayout>

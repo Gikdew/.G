@@ -3,6 +3,6 @@
     
     <item android:id="@+id/developer"          
           android:title="@string/menu_dev"
-          yourapp:showAsAction="never"/>"
+          yourapp:showAsAction="never"/>
      
 </menu>

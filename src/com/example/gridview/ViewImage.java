@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
 import android.app.AlertDialog;
 import android.app.WallpaperManager;
 import android.content.DialogInterface;
@@ -40,7 +39,8 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
     ImageView imageView;
     TextView tView;
     AlphaAnimation fadeIn, fadeOut;
-    
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +49,7 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
         setContentView(R.layout.view_image);                    
         ActionBar actionBar = getSupportActionBar();        
         actionBar.setDisplayHomeAsUpEnabled(true);
-        
+
         // Get intent data from GridViewActivity.java
         Intent i = getIntent();
         position = i.getExtras().getInt("id");
@@ -61,6 +61,7 @@ public class ViewImage extends ActionBarActivity implements OnClickListener{
         imageView = (ImageView) findViewById(R.id.full_image_view);
         tView = (TextView) findViewById(R.id.tvLayer);
         
+
         //SetOnClickListners
         imageView.setOnClickListener((OnClickListener) this);
  

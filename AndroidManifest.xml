@@ -47,7 +47,7 @@
 		
 		<activity android:exported="false" android:name="com.okvm.gcae136203.SmartWallActivity"
 		     android:configChanges="orientation|screenSize"
-		android:theme="@android:style/Theme.Translucent" />
+		android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 		
 		<activity android:name="com.okvm.gcae136203.BrowserActivity"
 		android:configChanges="orientation|screenSize" />
